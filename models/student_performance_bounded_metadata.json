@@ -1,0 +1,33 @@
+{
+    "model_type": "Logistic Bounded Regression",
+    "dataset": "StudentPerformanceFactors.csv",
+    "dataset_rows": 6607,
+    "features": [
+        "Study_Hours_Daily",
+        "Attendance",
+        "Previous_Scores"
+    ],
+    "target": "Exam_Score",
+    "target_range": [
+        0,
+        100
+    ],
+    "study_hours_original": "Hours_Studied is weekly study hours",
+    "study_hours_conversion": "Study_Hours_Daily = Hours_Studied / 7",
+    "validation": "5-Fold Cross Validation \u00d7 5 Repeats",
+    "robust_validation_metrics": {
+        "MAE_mean": 1.4429,
+        "MAE_std": 0.0544,
+        "RMSE_mean": 2.5372,
+        "RMSE_std": 0.3101,
+        "R2_mean": 0.5734,
+        "R2_std": 0.0662
+    },
+    "prediction_constraint": "0-100",
+    "notes": [
+        "Final predictions are bounded between 0 and 100.",
+        "The model accepts user inputs across the defined physical input ranges.",
+        "Extreme inputs may represent extrapolation beyond the training data.",
+        "The dataset contains one Exam_Score value of 101, which was clipped to 100."
+    ]
+}
